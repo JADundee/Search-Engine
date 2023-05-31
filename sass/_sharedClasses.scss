@@ -1,0 +1,16 @@
+.logoColour {
+    color: $logo-colour;
+}
+
+.offscreen {
+    position: absolute;
+    left: 1000000px;
+}
+
+.none {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
