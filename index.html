@@ -13,26 +13,26 @@
     <title>Search Engine</title>
 
     <link rel="stylesheet" href="dist/css/style.min.css">
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
  </head>
 
  <body>
     <main>
         <h1 class="offscreen">Wiki Powered Search Engine</h1>
 
-        <section class="searhEntry">
+        <section class="searchEntry">
             <h2 class="offscreen">Search Entry</h2>
             <div class="logo" aria-hidden="true">
                 <span class="logoColour">Search Engine</span>
             </div>
-            <form id="searchBar" class="searchBar">
+            <form id="searchBar" class="searchBar" role="search">
                 <label class="offscreen" for="searchBar">Input term or phrase</label>
-                <input id="search" type="text" autocomplete="off">
+                <input id="search" type="text" autocomplete="off" role="searchbox">
                 <div id="clear" class="none button clear" role="button" tabindex="0" aria-label="Clear search terms">
                     <i class="fa-solid fa-circle-xmark"></i>
                 </div>
-                <button id="searchButton" class="button searchButton" type="submit" aria-label="Submitbutton">
-                    <i class="fa-solid fa-magnifying-glass"></i>             
+                <button id="searchButton" class="button searchButton" type="submit" aria-label="Submit button">
+                    <i class="fa-solid fa-magnifying-glass" onmouseover="this.className = 'fa-solid fa-fish-fins'" onmouseleave="this.className = 'fa-solid fa-magnifying-glass'"></i>             
                 </button>
             </form>
         </section>
