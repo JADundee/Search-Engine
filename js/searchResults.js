@@ -8,7 +8,7 @@ export const deleteSearchResults = () => {
 }
 
 export const buildSearchResults = (resultArray) => {
-    resultArray.foreach(result => {
+    resultArray.forEach((result) => {
         const resultItem = createResultItem(result);
         const resultContents = document.createElement("div");
         resultContents.classList.add("resultContents");
@@ -26,13 +26,13 @@ export const buildSearchResults = (resultArray) => {
 
 const createResultItem = (result) => {
     const resultItem = document.createElement("div");
-    resultItem.classList.classList.add("resultItem");
+    resultItem.classList.add("resultItem");
     const resultTitle = document.createElement("div");
     resultTitle.classList.add("resultTitle");
     const link = document.createElement("a");
     link.href = `https://en.wikipedia.org/?curid=${result.id}`;
     link.textContent = result.title;
-    link.target - "_blank";
+    link.target = "_blank";
     resultTitle.append(link);
     resultItem.append(resultTitle);
     return resultItem;
@@ -40,7 +40,7 @@ const createResultItem = (result) => {
 
 const createResultImage = (result) => {
     const resultImage = document.createElement("div");
-    result.image.classList.add("resultImage");
+    resultImage.classList.add("resultImage");
     const img = document.createElement("img");
     img.src = result.img;
     img.alt = result.title;
@@ -65,8 +65,8 @@ export const clearStatsLine = () => {
 export const setStatsLine = (numberOfResults) => {
     const statsLine = document.getElementById("stats");
     if (numberOfResults) {
-        statsLine.textContent= `Displaying ${numberOfResults} results.`
+        statsLine.textContent = `Displaying ${numberOfResults} results.`
     } else {
-        setStatsLine.textContent = "Sorry, no results matched your search."
+        statsLine.textContent = "Sorry, no results matched your search."
     }
 }

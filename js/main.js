@@ -1,6 +1,5 @@
-import { setSearchFocus, showClearButton } from "./searchBar.js";
-import { getSearchTerm } from "./dataFunctions.js";
-import { retrieveSearchResults } from "./dataFunctions.js";
+import { setSearchFocus, showClearButton, clearSearchText, clearPushListener } from "./searchBar.js";
+import { getSearchTerm, retrieveSearchResults } from "./dataFunctions.js";
 import { deleteSearchResults, buildSearchResults, clearStatsLine, setStatsLine } from "./searchResults.js";
 
 document.addEventListener("readystatechange", (event) => {
@@ -11,12 +10,13 @@ document.addEventListener("readystatechange", (event) => {
 
 const initApp = () => {
     setSearchFocus();
-    showClearButton();
-
-    //TODO: 2 listeners clear text
-
-    const form = document.getElementById("searchBar")
-    form.addEventListener("submit", submitSearch)
+    const search = document.getElementById("search");
+    search.addEventListener("input", showClearButton);
+    const clear = document.getElementById("clear");
+    clear.addEventListener("click", clearSearchText);
+    clear.addEventListener("keydown",  clearPushListener);
+    const form = document.getElementById("searchBar");
+    form.addEventListener("submit", submitSearch);
 }
 
 // Procedural Workflow Function

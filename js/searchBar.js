@@ -24,7 +24,7 @@ export const clearSearchText = (event) => {
 }
 
 export const clearPushListener = (event) => {
-    if (event.key === "enter" || event.key === " ") {
+    if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         document.getElementById("clear").click();
     }

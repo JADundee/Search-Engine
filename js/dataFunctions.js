@@ -43,7 +43,7 @@ const requestData = async (searchString) => {
 
 const processWikiResults = (results) => {
     const resultArray = [];
-    Object.keys(results).forEach(key => {
+    Object.keys(results).forEach((key) => {
         const id = key;
         const title = results[key].title;
         const text = results[key].extract;
