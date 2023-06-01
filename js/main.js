@@ -1,7 +1,7 @@
 import { setSearchFocus } from "./searchBar.js";
 import { getSearchTerm } from "./dataFunctions.js";
 import { retrieveSearchResults } from "./dataFunctions.js";
-import { buildSearchResults, clearStatsLine } from "./searchResults.js";
+import { buildSearchResults, clearStatsLine, setStatsLine } from "./searchResults.js";
 
 document.addEventListener("readystatechange", (event) => {
     if (event.target.readyState === "complete") {
@@ -33,5 +33,5 @@ const processSearch = async () => {
     if (searchTerm === "") return;
     const resultArray = await retrieveSearchResults(searchTerm);
     if (resultArray.length) buildSearchResults(resultArray);
-    //TODO: set stats line
+    setStatsLine(resultArray.length);
 }
