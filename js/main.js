@@ -23,7 +23,7 @@ const submitSearch = (event) => {
     event.preventDefault();
     //TODO: delete search results
     processSearch();
-    //TODO: set focus
+    setSearchFocus();
 }
 
 // procedural
