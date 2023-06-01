@@ -1,7 +1,7 @@
 import { setSearchFocus } from "./searchBar.js";
 import { getSearchTerm } from "./dataFunctions.js";
 import { retrieveSearchResults } from "./dataFunctions.js";
-import { buildSearchResults } from "./searchResults.js";
+import { buildSearchResults, clearStatsLine } from "./searchResults.js";
 
 document.addEventListener("readystatechange", (event) => {
     if (event.target.readyState === "complete") {
@@ -28,7 +28,7 @@ const submitSearch = (event) => {
 
 // procedural
 const processSearch = async () => {
-    //TODO: clear stats line
+    clearStatsLine();
     const searchTerm = getSearchTerm();
     if (searchTerm === "") return;
     const resultArray = await retrieveSearchResults(searchTerm);
