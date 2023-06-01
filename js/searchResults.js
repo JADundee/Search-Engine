@@ -26,5 +26,15 @@ const createResultItem = (result) => {
     link.target - "_blank";
     resultTitle.append(link);
     resultItem.append(resultTitle);
-    return resultItem
+    return resultItem;
+}
+
+const createResultImage = (result) => {
+    const resultImage = document.createElement("div");
+    result.image.classList.add("resultImage");
+    const img = document.createElement("img");
+    img.src = result.img;
+    img.alt = result.title;
+    resultImage.append(img);
+    return resultImage;
 }
