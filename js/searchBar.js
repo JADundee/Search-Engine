@@ -13,3 +13,10 @@ export const showClearButton = () => {
         clear.classList.remove("flex");
     }
 }
+
+export const clearSearchText = (event) => {
+    event.preventDefault();
+    document.getElementById("search").value = "";
+    const clear = document.getElementById("clear");
+    clear.classList.add("none")
+}
